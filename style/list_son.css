@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+.list .list_name{
+	width:80%;
+	height:70px;
+	line-height:70px;
+	padding-left:30px;
+	font-size:20px;
+}
+.list ul{
+	width:80%;
+	padding-left:50px;
+	display:block;
+	
+}
+
+.list ul li.one{
+	display:block;
+	width:80%;
+	height:70px;
+	border:1px solid black;
+	padding-left:50px;
+	line-height:70px;
+}
+.list ul li span.two{
+	color:green;
+	
+}
