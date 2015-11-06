@@ -1,4 +1,7 @@
 <?php 
+if(!defined('IN_SFKBBS')){
+	exit(':((');
+}
 if(empty($_POST['name'])){
 	skip('register.php', 'error', '用户名不得为空！');
 }

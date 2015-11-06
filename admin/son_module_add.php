@@ -2,9 +2,9 @@
 include_once '../inc/config.inc.php';
 include_once '../inc/mysql.inc.php';
 include_once '../inc/tool.inc.php';
-$template['title']='子版块添加页';
-$template['css']=array('style/public.css');
+
 $link=connect();
+include_once 'inc/is_manage_login.inc.php';//验证管理员是否登录
 if(isset($_POST['submit'])){
 	//验证用户填写的信息
 	$check_flag='add';
@@ -17,6 +17,8 @@ if(isset($_POST['submit'])){
 		skip('son_module_add.php','error','对不起，添加失败，请重试！');
 	}
 }
+$template['title']='子版块添加页';
+$template['css']=array('style/public.css');
 ?>
 <?php include 'inc/header.inc.php'?>
 <div id="main">
@@ -62,13 +64,7 @@ if(isset($_POST['submit'])){
 				<td>
 					<select name="member_id">
 						<option value="0">======请选择一个会员作为版主======</option>
-						<?php 
-						$query="select * from sfk_member";
-						$result_member=execute($link,$query);
-						while ($data_member=mysqli_fetch_assoc($result_member)){
-							echo "<option value='{$data_member['id']}'>{$data_member['name']}</option>";
-						}
-						?>
+						
 					</select>
 				</td>
 				<td>

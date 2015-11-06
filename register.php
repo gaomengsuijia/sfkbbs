@@ -1,20 +1,21 @@
 <?php 
+define('IN_SFKBBS',true);
 include_once 'inc/config.inc.php';
 include_once 'inc/mysql.inc.php';
 include_once 'inc/tool.inc.php';
 $link=connect();
-if(is_login($link)){
+$member_id=is_login($link);
+if($member_id){
 	skip('index.php','error','你已经登录，请不要重复注册！');
 }
 if(isset($_POST['submit'])){
 	include 'inc/check_register.inc.php';
-	$password = md5($_POST['pw']);
-	$query="insert into sfk_member(name,pw,register_time) values('{$_POST['name']}','{$password}',now())";
+	$query="insert into sfk_member(name,pw,register_time,photo,last_time) values('{$_POST['name']}',md5('{$_POST['pw']}'),now(),'',now())";
 	execute($link,$query);
 	if(mysqli_affected_rows($link)==1){
 		setcookie('sfk[name]',$_POST['name']);
 		setcookie('sfk[pw]',sha1(md5($_POST['pw'])));
-		skip('index.php','ok','注册成功!自动登录中...');
+		skip('index.php','ok','注册成功！');
 	}else{
 		skip('register.php','eror','注册失败,请重试！');
 	}

@@ -3,9 +3,8 @@ include_once 'inc/config.inc.php';
 include_once 'inc/mysql.inc.php';
 include_once 'inc/tool.inc.php';
 $link=connect();
-/*if(!$member_id=is_login($link)){
-	skip('login.php', 'error', '请登录之后再发帖!');
-}*/
+$member_id=is_login($link);
+
 
 $template['title']='首页';
 $template['css']=array('style/public.css','style/index.css');
@@ -27,7 +26,7 @@ while($data_father=mysqli_fetch_assoc($result_father)){
 ?>
 <div class="box auto">
 	<div class="title">
-		<?php echo $data_father['module_name']?>
+		<a href="list_father.php?id=<?php echo $data_father['id']?>" style="color:#105cb6;"><?php echo $data_father['module_name']?></a>
 	</div>
 	<div class="classList">
 		<?php 
@@ -41,7 +40,7 @@ while($data_father=mysqli_fetch_assoc($result_father)){
 				$count_all=num($link,$query);
 				$html=<<<A
 					<div class="childBox new">
-						<h2><a href="#">{$data_son['module_name']}</a> <span>(今日{$count_today})</span></h2>
+						<h2><a href="list_son.php?id={$data_son['id']}">{$data_son['module_name']}</a> <span>(今日{$count_today})</span></h2>
 						帖子：{$count_all}<br />
 					</div>
 A;

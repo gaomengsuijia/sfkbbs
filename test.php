@@ -1,24 +1,8 @@
-<?php
-class goushi{
-	var $name;
-	var $age;
-	function __construct($name,$age){
-		$this->name=$name;
-		$this->age=$age;
-	}
+<?php 
+//5.4.0
+echo PHP_VERSION;
+
+if(version_compare(PHP_VERSION,'5.4.0')<0){
+	exit('您的PHP版本为'.PHP_VERSION.'！我们的程序要求是PHP版本不低于5.4.0!');
 }
-class Person{
-	private $redis;
-	function __construct($name,$age){
-		$this->redis=new goushi();
-		return $this->redis;
-	}
-	
-}
-//$b = new goushi('li','lu');
-$a = new Person('li','lu');
-
-var_dump($a);
-
-
 ?>
