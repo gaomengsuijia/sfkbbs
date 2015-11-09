@@ -62,7 +62,7 @@ foreach ($template['css'] as $val){
 		<li>
 			<div class="small_title">用户管理</div>
 			<ul class="child">
-				<li><a href="#">用户列表</a></li>
+				<li><a <?php if(basename($_SERVER['SCRIPT_NAME'])=='user_list.php'){ echo 'class="current"';}?>href="user_list.php">用户列表</a></li>
 			</ul>
 		</li>
 	</ul>
