@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <?php 
 include_once 'inc/config.inc.php';
@@ -163,6 +164,8 @@ $template['css']=array('style/public.css','style/list.css');
 	</div>
 	<div style="clear:both;"></div>
 =======
+=======
+>>>>>>> 1cf10fad128cf50789fbc3b7cc8be3cf8c4e4191
 <?php
 include_once 'inc/config.inc.php';
 include_once 'inc/mysql.inc.php';
@@ -189,4 +192,5 @@ $result=execute($link, $query);
 			<?php } ?>
 		</ul>
 </div>
+<?php include 'inc/footer.inc.php'?>
 <?php include 'inc/footer.inc.php'?>
