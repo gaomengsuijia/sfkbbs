@@ -1,0 +1,7 @@
+diff a/test.php b/test.php	(rejected hunks)
+@@ -6,4 +6,5 @@
+ if(version_compare(PHP_VERSION,'5.4.0')<0){
+ 	exit('您的PHP版本为'.PHP_VERSION.'！我们的程序要求是PHP版本不低于5.4.0!');
+ }
++echo "wo shi bei dev xiugai d"
+ ?>
