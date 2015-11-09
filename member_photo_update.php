@@ -12,7 +12,7 @@ $result_memebr=execute($link,$query);
 $data_member=mysqli_fetch_assoc($result_memebr);
 if(isset($_POST['submit'])){
 	$save_path='uploads'.date('/Y/m/d/');//写上服务器上文件系统的路径，而不是url地址
-	$upload=upload($save_path,'8M','photo');
+	$upload=upload($save_path,'1M','photo');
 	if($upload['return']){
 		$query="update sfk_member set photo='{$upload['save_path']}' where id={$member_id}";
 		execute($link, $query);

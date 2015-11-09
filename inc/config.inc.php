@@ -7,7 +7,7 @@ if(version_compare(PHP_VERSION,'5.4.0')<0){
 }
 define('DB_HOST','localhost');
 define('DB_USER','root');
-define('DB_PASSWORD','123456');
+define('DB_PASSWORD','');
 define('DB_DATABASE','sfkbbs');
 define('DB_PORT',3306);
 //我们的项目（程序），在服务器上的绝对路径

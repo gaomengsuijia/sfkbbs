@@ -16,6 +16,7 @@ function upload($save_path,$custom_upload_max_filesize,$key,$type=array('jpg','j
 	$custom_number=substr($custom_upload_max_filesize,0,-1);
 	$custom_multiple=get_multiple($custom_unit);
 	$custom_bytes=$custom_number*$custom_multiple;
+	//var_dump($phpini);exit();
 
 	if($custom_bytes>$phpini_bytes){
 		$return_data['error']='传入的$custom_upload_max_filesize大于PHP配置文件里面的'.$phpini;
