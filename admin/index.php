@@ -73,7 +73,7 @@ $template['css']=array('style/public.css');
 			<li>|- 程序安装位置(绝对路径)：<?php echo SA_PATH?></li>
 			<li>|- 程序在web根目录下的位置(首页的url地址)：<?php echo SUB_URL?></li>
 			<li>|- 程序版本：sfkbbs V1.0 <a target="_blank" href="http://www.sifangku.com">[查看最新版本]</a></li>
-			<li>|- 程序作者：孙胜利 :))</li>
+			<li>|- 程序作者：小图:))</li>
 			<li>|- 网站：<a target="_blank" href="http://www.sifangku.com">www.sifangku.com</a></li>
 		</ul>
 	</div>

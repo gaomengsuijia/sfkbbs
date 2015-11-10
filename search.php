@@ -12,7 +12,7 @@ if(!isset($_GET['keyword'])){
 }
 $_GET['keyword']=trim($_GET['keyword']);
 $_GET['keyword']=escape($link,$_GET['keyword']);
-$query="select count(*) from sfk_content where title like '%{$_GET['keyword']}%'";
+$query="select count(*) from sfk_content,sfk_member where title like '%{$_GET['keyword']}%' and sfk_content.member_id=sfk_member.id";
 $count_all=num($link,$query);
 
 $template['title']='搜索页';
@@ -29,7 +29,7 @@ $template['css']=array('style/public.css','style/list.css');
 			<div class="pages_wrap">
 				<div class="pages">
 					<?php 
-					$page=page($count_all,20);
+					$page=page($count_all,10);
 					echo $page['html'];
 					?>
 				</div>
@@ -39,11 +39,17 @@ $template['css']=array('style/public.css','style/list.css');
 		<div style="clear:both;"></div>
 		<ul class="postsList">
 			<?php 
-			$query="select
+			/*$query="select
 			sfk_content.title,sfk_content.id,sfk_content.time,sfk_content.times,sfk_content.member_id,sfk_member.name,sfk_member.photo
 			from sfk_content,sfk_member where
 			sfk_content.title like '%{$_GET['keyword']}%' and
 			sfk_content.member_id=sfk_member.id
+			{$page['limit']}";*/
+			$query="select
+			sfk_content.title,sfk_content.id,sfk_content.time,sfk_content.times,sfk_content.member_id,sfk_member.name,sfk_member.photo
+			from sfk_content,sfk_member where 
+			sfk_content.title like '%{$_GET['keyword']}%' and 
+			sfk_content.member_id=sfk_member.id 
 			{$page['limit']}";
 			$result_content=execute($link,$query);
 			while($data_content=mysqli_fetch_assoc($result_content)){

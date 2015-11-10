@@ -2,10 +2,11 @@
 include_once '../inc/config.inc.php';
 include_once '../inc/mysql.inc.php';
 include_once '../inc/tool.inc.php';
+include_once '../inc/page.inc.php';
 $link=connect();
 include_once 'inc/is_manage_login.inc.php';//验证管理员是否登录
 $template['title']='前台用户列表页';
-$template['css']=array('style/public.css');
+$template['css']=array('style/public.css','../style/public.css');
 ?>
 <?php include 'inc/header.inc.php'?>
 <div id="main">
@@ -20,7 +21,13 @@ $template['css']=array('style/public.css');
 		</tr>
 		<?php 
 		//$query="select ssm.id,ssm.sort,ssm.module_name,sfm.module_name father_module_name,ssm.member_id from sfk_son_module ssm,sfk_father_module sfm where ssm.father_module_id=sfm.id order by sfm.id";
-		$query="select * from sfk_member ORDER BY register_time";
+		
+		$query_count="select count(*) from sfk_member";
+		$count=num($link, $query_count);
+		$page=page($count, 5,$num_btn=10,$page='page');
+	
+		$query="select * from sfk_member ORDER BY register_time desc {$page['limit']}";
+		//var_dump($page['limit']);exit();
 		$result=execute($link,$query);
 		while ($data=mysqli_fetch_assoc($result)){
 			$url=urlencode("user_delete.php?id={$data['id']}");
@@ -42,6 +49,11 @@ A;
 		
 	</table>
 	</form>
+	<div class="pages">
+		<?php 
+			echo $page['html'];
+		?>
+	</div>
 </div>
 <?php include 'inc/footer.inc.php'?>
 

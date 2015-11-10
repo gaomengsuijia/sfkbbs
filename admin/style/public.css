@@ -1,4 +1,4 @@
-/**基本格式开始***************/
+/**鍩烘湰鏍煎紡寮�***************/
 * {
 	/*word-break: break-all;*/
 }
@@ -149,14 +149,17 @@ input.btn {
 table.list tr {
 	height:50px;
 	background:url(hr.png) 0px bottom repeat-x;
+	width:400px;
 }
 table.list tr th {
 	padding-right:40px;
 	text-align:left;
+	width:100px;
 }
 table.list tr td {
 	padding-right:40px;
 	text-align:left;
+	width:100px;
 }
 table.au input {
 	width:300px;

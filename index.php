@@ -35,12 +35,12 @@ while($data_father=mysqli_fetch_assoc($result_father)){
 		if(mysqli_num_rows($result_son)){
 			while ($data_son=mysqli_fetch_assoc($result_son)){
 				$query="select count(*) from sfk_content where module_id={$data_son['id']} and time > CURDATE()";
+				//ar_dump(CURDATE());exit();
 				$count_today=num($link,$query);
 				$query="select count(*) from sfk_content where module_id={$data_son['id']}";
 				$count_all=num($link,$query);
 				$html=<<<A
 					<div class="childBox new">
-						<h2><a href="list_son.php?id={$data_son['id']}">{$data_son['module_name']}</a> <span>(今日{$count_today})</span></h2>
 						<h2><a href="list_son.php?id={$data_son['id']}" target="_blank">{$data_son['module_name']}</a> <span>(今日{$count_today})</span></h2>
 						帖子：{$count_all}<br />
 					</div>

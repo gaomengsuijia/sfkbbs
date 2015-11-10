@@ -25,6 +25,7 @@ function page($count,$page_size,$num_btn=10,$page='page'){
 		$_GET[$page]=$page_num_all;
 	}
 	$start=($_GET[$page]-1)*$page_size;
+	//每页数据从第几条开始
 	$limit="limit {$start},{$page_size}";
 
 	$current_url=$_SERVER['REQUEST_URI'];//获取当前url地址
