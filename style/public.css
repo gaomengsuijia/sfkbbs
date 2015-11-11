@@ -1,4 +1,4 @@
-/**基本格式开始***************/
+/**鍩烘湰鏍煎紡寮�***************/
 * {
 	/*word-break: break-all;*/
 }
@@ -35,7 +35,7 @@ body {
 #position a {
 	color:#666;
 }
-/**基本格式结束***************/
+/**鍩烘湰鏍煎紡缁撴潫***************/
 .header_wrap {
 	background:#488fce;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -53,7 +53,7 @@ body {
 #header .logo {
 	width:100px;
 	font-size:20px;
-	font-family:微软雅黑;
+	font-family:寰蒋闆呴粦;
 	font-weight:bold;
 	color:#fff;
 	float:left;
@@ -181,7 +181,7 @@ a.reply {
 	border-top:1px solid #d3d3d3;
 	text-align:center;
 	padding:20px 0;
-	margin-top:30px;
+	margin-bottom:30px;
 }
 #footer a {
 	color:#666;

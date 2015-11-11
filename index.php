@@ -13,9 +13,12 @@ $template['css']=array('style/public.css','style/index.css');
 <div id="hot" class="auto">
 	<div class="title">热门动态</div>
 	<ul class="newlist">
-		<!-- 20条 -->
-		<li><a href="#">[库队]</a> <a href="#">私房库实战项目录制中...</a></li>
-		
+	<?php 
+		$query_hot="select * from sfk_content,sfk_member where sfk_content.member_id=sfk_member.id order by times desc limit 0,5";
+		$result_hot=execute($link, $query_hot);
+		while ($data_hot=mysqli_fetch_assoc($result_hot)){?>
+			<li><a href="show.php?id=<?php echo $data_hot['id']?>" target="_blank">●  <?php echo $data_hot['title']?></a> <span><?php echo $data_hot['time']?></span></span></li>
+		<?php }?>
 	</ul>
 	<div style="clear:both;"></div>
 </div>

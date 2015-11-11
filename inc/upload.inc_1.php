@@ -34,21 +34,25 @@ function upload($save_path,$custom_upload_max_filesize,$key,$type=array('jpg','j
 	if(!isset($_FILES[$key]['error'])){
 		$return_data['error']='由于未知原因导致，上传失败，请重试！';
 		$return_data['return']=false;
+		$return_data['viod']=1;
 		return $return_data;
 	}
 	if ($_FILES[$key]['error']!=0&&$_FILES[$key]['error']!=4) {
 		$return_data['error']=$arr_errors[$_FILES[$key]['error']];
 		$return_data['return']=false;
+		$return_data['viod']=1;
 		return $return_data;
 	}
 	if(!is_uploaded_file($_FILES[$key]['tmp_name'])){
 		$return_data['error']='您上传的文件不是通过 HTTP POST方式上传的！';
 		$return_data['return']=false;
+		$return_data['viod']=1;
 		return $return_data;
 	}
 	if($_FILES[$key]['size']>$custom_bytes){
 		$return_data['error']='上传文件的大小超过了程序作者限定的'.$custom_upload_max_filesize;
 		$return_data['return']=false;
+		$return_data['viod']=1;
 		return $return_data;
 	}
 	$arr_filename=pathinfo($_FILES[$key]['name']);
@@ -58,12 +62,14 @@ function upload($save_path,$custom_upload_max_filesize,$key,$type=array('jpg','j
 	if(!in_array($arr_filename['extension'],$type)){
 		$return_data['error']='上传文件的后缀名必须是'.implode(',',$type).'这其中的一个';
 		$return_data['return']=false;
+		$return_data['viod']=1;
 		return $return_data;
 	}
 	if(!file_exists($save_path)){
 		if(!mkdir($save_path,0777,true)){
 			$return_data['error']='上传文件保存目录创建失败，请检查权限!';
 			$return_data['return']=false;
+			$return_data['viod']=1;
 			return $return_data;
 		}
 	}
@@ -75,6 +81,7 @@ function upload($save_path,$custom_upload_max_filesize,$key,$type=array('jpg','j
 	if(!move_uploaded_file($_FILES[$key]['tmp_name'],$save_path.$new_filename)){
 		$return_data['error']='临时文件移动失败，请检查权限!';
 		$return_data['return']=false;
+		$return_data['viod']=1;
 		return $return_data;
 	}
 	$return_data['save_path']=$save_path.$new_filename;

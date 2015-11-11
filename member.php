@@ -94,9 +94,9 @@ $template['css']=array('style/public.css','style/list.css','style/member.css');
 				<dd class="name"><?php echo $data_member['name']?></dd>
 				<dd>帖子总计：<?php echo $count_all?></dd>
 				<?php 
-				if($member_id==$data_member['id']){
+				if($member_id==$data_member['id']){//以前是修改图像，现在加了个人资料修改
 				?>
-				<dd>操作：<a target="_blank" href="member_photo_update.php">修改头像</a><!--  | <a target="_blank" href="">修改密码</a></dd> -->
+				<dd><a target="_blank" href="user_data.php">个人资料</a>  | <a target="_blank" href="">修改密码</a></dd>
 				<?php }?>
 			</dl>
 			<div style="clear:both;"></div>

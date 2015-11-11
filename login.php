@@ -29,7 +29,7 @@ $template['css']=array('style/public.css','style/register.css');
 		<h2>请登录</h2>
 		<form method="post">
 			<label>用户名：<input type="text" name="name"  /><span></span></label>
-			<label>密码：<input type="password" name="pw"  /><span></span></label>
+			<label>密码：<input type="password" name="pw"  /> <span><a href="forget_ps.php" style="color:#333" target="_blank">忘记密码？</a></span></label>
 			<label>验证码：<input name="vcode" type="text"  /><span>*请输入下方验证码</span></label>
 			<img class="vcode" src="show_code.php" />
 			<label>自动登录：
