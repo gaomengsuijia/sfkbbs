@@ -1,5 +1,4 @@
 
-
 <?php
 include_once 'inc/config.inc.php'; 
 //5.4.0 test_1
@@ -10,11 +9,4 @@ if(version_compare(PHP_VERSION,'5.4.0')<0){
 }
 ?>
 <?php
-$html=<<<A
-	<div>
-		<p>我是一段输出的html</p>	
-	</div>
 
-A;
-echo $html;
-?>
