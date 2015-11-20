@@ -30,7 +30,7 @@ $query="select * from sfk_member where id={$data_son['member_id']}";
 $result_member=execute($link, $query);
 
 $template['title']=$data_son['module_name'];
-$template['css']=array('style/public.css','style/list.css');
+$template['css']=array('style/public.css','style/list.css','style/register.css');
 ?>
 <?php include 'inc/header.inc.php'?>
 <div id="position" class="auto">

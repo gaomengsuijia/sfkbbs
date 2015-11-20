@@ -34,7 +34,7 @@ $query="select count(*) from sfk_content where module_id in({$id_son}) and time>
 $count_today=num($link,$query);
 
 $template['title']=$data_father['module_name'];
-$template['css']=array('style/public.css','style/list.css');
+$template['css']=array('style/public.css','style/list.css','style/register.css');
 ?>
 <?php include 'inc/header.inc.php'?>
 <div id="position" class="auto">
