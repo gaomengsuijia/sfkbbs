@@ -5,7 +5,6 @@ include_once 'inc/tool.inc.php';
 $link=connect();
 $member_id=is_login($link);
 
-
 $template['title']='首页';
 $template['css']=array('style/public.css','style/index.css','style/register.css');
 ?>

@@ -54,7 +54,7 @@ A;
 <div id="screen"></div>
 <div id="register">
 	<h2>请登录<span class="close">X</span></h2>
-	<form method="post">
+	<form method="post" action="login.php">
 		<label>用户名：<input type="text" name="name"  /><span></span></label>
 		<label>密码：<input type="password" name="pw"  /> <span><a href="forget_ps.php" style="color:#333" target="_blank">忘记密码？</a></span></label>
 		<label>验证码：<input name="vcode" type="text"  /><span>*请输入下方验证码</span></label>
