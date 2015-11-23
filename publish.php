@@ -4,7 +4,7 @@ include_once 'inc/mysql.inc.php';
 include_once 'inc/tool.inc.php';
 $link=connect();
 if(!$member_id=is_login($link)){
-	skip('login.php', 'error', '请登录之后再发帖!');
+	skip('CopyOflogin.php', 'error', '请登录之后再发帖!');
 }
 if(isset($_POST['submit'])){
 	include 'inc/check_publish.inc.php';

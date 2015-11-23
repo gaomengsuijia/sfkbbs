@@ -54,7 +54,7 @@ A;
 	</div>
 <div style="margin-top:55px;"></div>
 <div id="screen"></div>
-<div class="login" id="login_div">
+<div class="login auto" id="login_div">
 	<h2>请登录<span class="close">X</span></h2>
 	<form method="post" action="login.php">
 		<label>用户名：<input type="text" name="name"  /><span></span></label>

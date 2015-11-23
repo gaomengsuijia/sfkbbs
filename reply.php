@@ -4,7 +4,7 @@ include_once 'inc/mysql.inc.php';
 include_once 'inc/tool.inc.php';
 $link=connect();
 if(!$member_id=is_login($link)){
-	skip('login.php', 'error', '请登录之后再做回复!');
+	skip('CopyOflogin.php', 'error', '请登录之后再做回复!');
 }
 if(!isset($_GET['id']) || !is_numeric($_GET['id'])){
 	skip('index.php', 'error', '您要回复的帖子id参数不合法!');
