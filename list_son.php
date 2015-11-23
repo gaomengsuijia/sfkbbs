@@ -161,6 +161,7 @@ $template['css']=array('style/public.css','style/list.css','style/register.css')
 			</ul>
 		</div>
 	</div>
-	<div style="clear:both;"></div>
+</div>	
+<div style="clear:both;"></div>
 
 <?php include 'inc/footer.inc.php'?>

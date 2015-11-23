@@ -2,7 +2,7 @@
 * {
 	/*word-break: break-all;*/
 }
-body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,textarea,p {
+html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,textarea,p {
 	margin:0px;
 	padding:0px;
 	font-size:13px;
@@ -20,9 +20,14 @@ a {
 a:hover {
 	text-decoration:underline;
 }
-body {
+body{
 	background:#f4f4f4;
 	color:#333;
+	min-height:100%;
+}
+.baohang{
+	position:relative;
+	min-height:900px;
 }
 .auto {
 	width:960px;
@@ -106,10 +111,10 @@ body {
     width: 25px;
     float:right;
 }
-#header .login {
+#header .login_one {
 	float:right;
 }
-#header .login a {
+#header .login_one a {
 	color:#fff;
 }
 a.btn {
@@ -180,8 +185,11 @@ a.reply {
 #footer {
 	border-top:1px solid #d3d3d3;
 	text-align:center;
-	padding:20px 0;
-	margin-bottom:30px;
+	padding:5px 0;
+	bottom:0;
+	position:absolute;
+	width:100%;
+	background:#333;
 }
 #footer a {
 	color:#666;

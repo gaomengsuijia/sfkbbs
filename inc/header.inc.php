@@ -12,6 +12,7 @@ $data_info=mysqli_fetch_assoc($result_info);
 <meta name="description" content="<?php echo $data_info['description']?>" />
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
+<link rel='stylesheet' type='text/css' href='style/register.css'/>
 <?php 
 foreach ($template['css'] as $val){
 	echo "<link rel='stylesheet' type='text/css' href='{$val}' />";
@@ -19,6 +20,7 @@ foreach ($template['css'] as $val){
 ?>
 </head>
 <body>
+<div class="baohang">
 	<div class="header_wrap">
 		<div id="header" class="auto">
 			<div class="logo">sifangku</div>
@@ -31,7 +33,7 @@ foreach ($template['css'] as $val){
 					<input class="submit" type="submit" value="" />
 				</form>
 			</div>
-			<div class="login">
+			<div class="login_one">
 				<?php 
 				if(isset($member_id) && $member_id){
 $str=<<<A
@@ -50,13 +52,13 @@ A;
 			</div>
 		</div>
 	</div>
-	<div style="margin-top:55px;"></div>
+<div style="margin-top:55px;"></div>
 <div id="screen"></div>
-<div id="register">
+<div class="login" id="login_div">
 	<h2>请登录<span class="close">X</span></h2>
 	<form method="post" action="login.php">
 		<label>用户名：<input type="text" name="name"  /><span></span></label>
-		<label>密码：<input type="password" name="pw"  /> <span><a href="forget_ps.php" style="color:#333" target="_blank">忘记密码？</a></span></label>
+		<label>密码：　<input type="password" name="pw"  /> <span><a href="forget_ps.php" style="color:#666" target="_blank">忘记密码？</a></span></label>
 		<label>验证码：<input name="vcode" type="text"  /><span>*请输入下方验证码</span></label>
 		<img class="vcode" src="show_code.php" />
 		<label>自动登录：

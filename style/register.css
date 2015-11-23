@@ -1,13 +1,16 @@
-#register {
-	background:#fff;
+.login{
+	 background:#f4f4f4;
+}
+#login_div {
     display: none;
-    z-index: 200;
+    z-index: 2000;
     width:800px;
     height: 500px;
     border: 1px solid #000000;
     position: absolute;
+    background:#f4f4f4;
 }
-#register h2 {
+.login h2 {
 	border-bottom: 1px solid #ededed;
     color: #666;
     font-size: 16px;
@@ -15,23 +18,23 @@
     padding: 10px 15px;
     text-align: center;
 }
-#register form {
+.login form {
 	color:#333;
     margin-left: 250px;
 }
-#register h2 .close{
+.login h2 .close{
     float: right;
     cursor: pointer;
     color: red;
 }
-#register form label {
+.login form label {
 	display:block;
 	font-size: 14px;
     line-height: 25px;
     float:right;
     margin:20px 300px 0 0;
 }
-#register form label input {
+.login form label input {
 	width:230px;
 	height:18px;
 	background-color: #fff;
@@ -46,14 +49,14 @@
     vertical-align: middle;
 }
 
-#register form span {
+.login form span {
 	width:300px;
 	display:inline-block;
 	color:#999;
 	font-size:12px;
 	margin:0 0 0 5px;
 }
-#register .btn {
+.login .btn {
 	border-radius: 2px;
     font-size: 14px;
     line-height: normal;
@@ -67,7 +70,7 @@
     font-family: inherit;
     font-size: 100%;
     line-height: normal;
-    margin: 0;
+    margin:20px 0 60px 115px;
     overflow: visible;
     padding: 4px 10px;
     text-align: center;
@@ -76,16 +79,17 @@
     vertical-align: middle;
     white-space: nowrap;
 }
-#register .btn {
-	margin:20px 0 60px 115px;
+.login img.vcode{
+	display: block;
+    float: left;
 }
-#register img.vcode{
+#login_div img.vcode{
 	display: block;
     float: left;
     margin: 20px 0 0 0;
 }
 #screen {
-    background: #000;
+    background: #333;
     filter: alpha(opacity=50); /* IE的透明度 */
     opacity: 0.5;  /* 透明度 */
     display: none;
@@ -95,5 +99,4 @@
     width: 100%;
     height: 100%;
     z-index: 100; /* 此处的图层要大于页面 */
-    display:none;
 }

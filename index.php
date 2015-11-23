@@ -6,7 +6,7 @@ $link=connect();
 $member_id=is_login($link);
 
 $template['title']='首页';
-$template['css']=array('style/public.css','style/index.css','style/register.css');
+$template['css']=array('style/public.css','style/index.css');
 ?>
 <?php include 'inc/header.inc.php'?>
 <div id="hot" class="auto">

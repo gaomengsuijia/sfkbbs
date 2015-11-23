@@ -17,15 +17,17 @@ function hideOverlay() {
     $("#screen").fadeOut(200);
 }
 
-/* ï¿½ï¿½Ç°Ò³ï¿½ï¿½ß¶ï¿? */
+/* ï¿½ï¿½Ç°Ò³ï¿½ï¿½ß¶ï¿½? */
 function pageHeight() {
-    return document.body.scrollHeight;
+	//è·å–æ»šåŠ¨æ¡çš„æ»šåŠ¨é«˜åº¦
+	var scrollH=$(document).scrollTop();
+    return document.body.scrollHeight+scrollH;
 }
 /* ï¿½ï¿½Ç°Ò³ï¿½ï¿½ï¿½ï¿½ */
 function pageWidth() {
     return document.body.scrollWidth;
 }
-/* ¶¨Î»µ½Ò³ÃæÖĞĞÄ */
+/* ï¿½ï¿½Î»ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 function adjust(id) {
     var w = $(id).width();
     var h = $(id).height();
@@ -35,36 +37,37 @@ function adjust(id) {
     if(l < 0) l = 0;
     $(id).css({left: l+'px', top: t+'px'});
 }
-//ä¯ÀÀÆ÷ÊÓ¿ÚµÄ¸ß¶È
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ÚµÄ¸ß¶ï¿½
 function windowHeight() {
     var de = document.documentElement;
     return self.innerHeight || (de && de.clientHeight) || document.body.clientHeight;
 }
-//ä¯ÀÀÆ÷ÊÓ¿ÚµÄ¿í¶È
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ÚµÄ¿ï¿½ï¿½
 function windowWidth() {
     var de = document.documentElement;
     return self.innerWidth || (de && de.clientWidth) || document.body.clientWidth
 }
-/* ä¯ÀÀÆ÷´¹Ö±¹ö¶¯Î»ÖÃ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ */
 function scrollY() {
     var de = document.documentElement;
     return self.pageYOffset || (de && de.scrollTop) || document.body.scrollTop;
 }
-/* ä¯ÀÀÆ÷Ë®Æ½¹ö¶¯Î»ÖÃ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ */
 function scrollX() {
     var de = document.documentElement;
     return self.pageXOffset || (de && de.scrollLeft) || document.body.scrollLeft;
 }
 $(function(){
-    //´ò¿ªµÇÂ¼½çÃæ
+    //ï¿½ò¿ªµï¿½Â¼ï¿½ï¿½ï¿½ï¿½
     $('#login').click(function(){
         showOverlay("#screen");
-        $("#register").css("display",'block');
-        adjust("#register");
+        $("#login_div").css("display",'block');
+        adjust("#login_div");
     })
-    //¹Ø±ÕµÇÂ¼½çÃæ
-    $("#register h2 .close ").click(function(){
-        $("#register").css("display",'none');
+    
+    //ï¿½Ø±Õµï¿½Â¼ï¿½ï¿½ï¿½ï¿½
+    $(".login h2 .close ").click(function(){
+    	$("#login_div").css("display",'none');
         $("#screen").css('display','none');
     });
 })
